@@ -1,5 +1,8 @@
-#ignore thumbnails created by windows
+# Thumbnails created by windows
 Thumbs.db
+
+# *shakefist* MacOS
+.DS_Store
 
 # Vim swapfiles
 *.swp
