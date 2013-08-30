@@ -67,8 +67,8 @@ filetype off
 
 " Vundle
 set runtimepath+=~/.vim/bundle/vundle/
-"call vundle#rc()
-"Bundle 'gmarik/vundle'
+call vundle#rc()
+Bundle 'gmarik/vundle'
 
 " YouCompleteMe
 "Bundle 'Valloric/YouCompleteMe'
