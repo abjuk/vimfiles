@@ -4,7 +4,6 @@ autocmd!
 behave xterm
 "so $VIMRUNTIME/mswin.vim
 
-
 """""""""""""""""""""""""""""""""""""""""
 "  Global Settings
 """""""""""""""""""""""""""""""""""""""""
@@ -14,24 +13,29 @@ set autowrite
 set background=dark
 set backspace=2
 set backup
-set backupdir=.\\backup,d:\\temp\\vim,d:\\temp
+set backupdir=~/.backup
 set backupext=.bak
 set cindent
 set clipboard=unnamed
 set cmdheight=1
+set completeopt=menu,menuone,longest
 if version >= 600
     set foldlevel=11
     set foldmethod=syntax
     "set foldtext=/\\(.*\\)/>\\d\ \\f\ lines...\ \ \ 
 endif
 set formatoptions+=1
-set guifont=Lucida_Console:h11
+set guifont=Menlo:h14
+set guioptions-=T
+set incsearch
 set ignorecase
 set laststatus=2
-set lines=54
+set linebreak
+set listchars=tab:>-,eol:$
 set mousehide
 set mousemodel=popup_setpos
 set nohlsearch
+set omnifunc=ClangComplete
 "set printerfont=Terminal:h9
 set report=0
 set scrolloff=4
@@ -39,7 +43,7 @@ set selectmode=mouse
 set shiftround
 set shiftwidth=4
 set shortmess+=r
-set showbreak=>>>
+set showbreak=-->
 set showcmd
 set showfulltag
 set showmatch
@@ -47,26 +51,67 @@ set showmode
 set sidescroll=8
 set sidescrolloff=4
 set smartcase
+set softtabstop=4
 "set statusline=%<%f%y%h%m%r[%{SSGetLockStatus()}]%=%-14(%l,%c%V%)\ %P
 set statusline=%<%f%y%h%m%r%=%-14(%l,%c%V%)\ %P
-set tabstop=8
-set textwidth=78
+set tabstop=4
+" steps up the dir tree til it finds a .tags file.
+set tags=./tags,tags,~/rocketman2/.tags
+"set textwidth=78
 
-" TagList Options
+filetype off
+
+"""""""""""""""""""""""""""""""""""""""""
+"  Plugins
+"""""""""""""""""""""""""""""""""""""""""
+
+" Vundle
+set runtimepath+=~/.vim/bundle/vundle/
+"call vundle#rc()
+"Bundle 'gmarik/vundle'
+
+" YouCompleteMe
+"Bundle 'Valloric/YouCompleteMe'
+
+
+
+" TagList
+let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 let Tlist_Exit_OnlyWindow = 1
 let Tlist_Show_Menu = 1
 let Tlist_Use_Right_Window = 1
 
 " Source Safe plugin
 "let $SSDIR="C:\\Program Files\\Microsoft Visual Studio\\VSS"
-let $SSDIR="//zeus/DSI_VSS_2005_NET/"
-let ssLocalTree="c:._Src2"
-let ssMenuPath=""
-let ssUserName="kpivin"
+"let $SSDIR="//zeus/DSI_VSS_2005_NET/"
+"let ssLocalTree="c:._Src2"
+"let ssMenuPath=""
+"let ssUserName="kpivin"
+
+" Omnicomplete 
+"let OmniCpp_DefaultNamespaces = ["dslib", "game"]
+
+" Clang Complete
+let g:clang_auto_select = 0
+let g:clang_complete_auto = 0
+let g:clang_use_library = 1
+let g:clang_complete_copen = 1
+let g:clang_complete_patterns = 0
+let g:clang_user_options='|| exit 0'
+
+" Supertab
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabClosePreviewOnPopupClose = 1
 
 """"""""""""""""""""""""""""""""""""""""""
 "  Key Mappings
 """"""""""""""""""""""""""""""""""""""""""
+
+" Make Y yank to end of line, like C and D
+nnoremap Y y$
+
+" Use the spacebar to toggle the current fold in normal mode
+nnoremap <Space> za
 
 " Puts spaces around all operators on a line.
 " Gets confused by paren-bangs.
@@ -79,19 +124,24 @@ nmap <F6> :s/;\(\k\)/;<Space>\1/g<CR>
 " Ditto for entire file
 nmap <S-F6> :%s/;\(\k\)/;<Space>\1/g<CR>
 
-" Toggle Tag List
-nmap <F8> :TlistToggle<CR>
+" SVN diff on current file
+nmap <F8> :set columns=188<CR>:VCSVimDiff<CR>
+nmap <S-F8> :set columns=110<CR>
 
 " Run ctags
-nmap <F9> :!ctags -R --totals .<CR>
+nmap <F4> :!~/bin/dirtags .<CR>
 
-" F9 brings up word under cursor in MSDN help.
-nmap <F4> *#yw:! start keyhh -\#alink <C-R>"c:\Program Files\Microsoft Visual Studio\MSDN\2000JAN\1033\MSDN000.COL<CR>
+" Save files in unix format
+"nmap <F4> :w ++ff=unix<CR>
 
 " ^] in insert mode completes tag
 inoremap  
 " ^L in insert mode completes line
 inoremap  
+
+" Move up and down between diffs a la Cornerstone
+nmap <D-Up> [c
+nmap <D-Down> ]c
 
 """"""""""""""""""""""""""""""""""""""""""
 "  Filetypes
@@ -116,82 +166,20 @@ au BufNewFile,BufRead *.hdt,*.hdp,*.hdc set filetype=xml
 """"""""""""""""""""""""""""""""""""""""""
 "  Autocommands
 """"""""""""""""""""""""""""""""""""""""""
+" Autosave any time we lose focus or leave the buffer
+au FocusLost * update
+au BufLeave * update
 
-" Refresh changed files
-"au FileChangedShell * :e
-" Base settings
-"au BufRead * set ts=8 nocindent formatoptions=tcq
-" C Coding
-"au BufRead *.cpp,*.c,*.h set ts=4 formatoptions=croql cindent 
-au FileType cpp,c source $VIM/MFCrc.vim
-au FileType cpp,c au FocusLost * update
-au FileType cpp,c au BufLeave * update
-au FileType cpp,c set ts=4
+" C Coding, 1P standards
+au FileType cpp,c source ~/.vim/MFCrc.vim
+au FileType cpp,c,objc,objcpp,actionscript setlocal ts=4 sts=4 sw=4 expandtab
+au FileType java setlocal ts=4 sts=4 sw=4 expandtab
+"au FileType cpp,c,objc,objcpp,actionscript,java set sts=3
+"au FileType cpp,c,objc,objcpp,actionscript,java set sw=3
+"au FileType cpp,c,objc,objcpp,actionscript,java set expandtab
 " Perl Coding
 au FileType perl set ts=4 cindent
 au FileType perl highlight Identifier  term=underline ctermfg=3 guifg=yellow 
 
-""""""""""""""""""""""""""""""""""""""""""
-"  Highlighting
-""""""""""""""""""""""""""""""""""""""""""
 syntax on
-
-" test
-"------ this clears out the old colors before we begin
-highlight Constant    NONE
-highlight Delimiter   NONE
-highlight Directory   NONE
-highlight Error       NONE
-highlight ErrorMsg    NONE
-highlight Identifier  NONE
-highlight LineNr      NONE
-highlight ModeMsg     NONE
-highlight MoreMsg     NONE
-highlight Normal      NONE
-highlight NonText     NONE
-highlight PreProc     NONE
-highlight Question    NONE
-highlight Search      NONE
-highlight Special     NONE
-highlight SpecialKey  NONE
-highlight Statement   NONE
-highlight StatusLine  NONE
-highlight Title       NONE
-highlight Todo        NONE
-highlight Type        NONE
-highlight Visual      NONE
-highlight WarningMsg  NONE
-
-highlight Statement   guifg=dodgerblue term=bold ctermfg=2 
-highlight Function    guifg=yellow term=underline ctermfg=3 
-highlight Identifier  guifg=orange term=underline ctermfg=3 
-highlight Constant    guifg=purple term=underline ctermfg=6 
-highlight Comment     guifg=maroon term=bold ctermfg=5 ctermbg=0 
-highlight Type        guifg=green term=underline cterm=bold ctermfg=3 
-highlight Special     guifg=red term=bold ctermfg=5 
-highlight Todo        guifg=purple term=bold ctermfg=red ctermbg=yellow 
-highlight PreProc     guifg=forestgreen term=underline ctermfg=14 
-highlight Normal      guifg=cyan guibg=black ctermfg=white ctermbg=black 
-
-highlight Cursor      guifg=black guibg=Green 
-highlight Delimiter   guifg=Red term=bold cterm=bold ctermfg=1 gui=bold 
-highlight Directory   guifg=Blue term=bold ctermfg=DarkBlue 
-highlight ErrorMsg    guifg=Red term=standout cterm=bold ctermfg=1 gui=bold 
-highlight LineNr      guifg=Brown term=underline cterm=bold ctermfg=3 
-highlight MoreMsg     guifg=Green term=bold cterm=bold ctermfg=2 gui=bold 
-highlight NonText     guifg=green3 term=bold ctermfg=2 
-highlight Question    guifg=Green term=standout cterm=bold ctermfg=2 gui=bold 
-highlight Search      guifg=Red term=reverse ctermbg=2 
-highlight SpecialKey  guifg=dodgerBlue term=bold ctermfg=DarkBlue 
-highlight Title       guifg=Blue term=bold cterm=bold ctermfg=4 gui=bold 
-highlight WarningMsg  guifg=Red term=standout cterm=bold ctermfg=1 ctermbg=4 
-highlight ModeMsg     guifg=yellow2 guibg=red term=bold cterm=bold ctermfg=3 ctermbg=1 
-highlight Folded      guifg=cyan term=reverse cterm=bold ctermfg=3 ctermbg=2 guibg=#3f3f3f 
-highlight Error       guifg=red guibg=yellow term=standout cterm=bold ctermbg=1 ctermfg=1 gui=bold 
-highlight StatusLine  guifg=wheat guibg=#2f4f4f term=reverse cterm=bold ctermfg=3 ctermbg=4 
-highlight StatusLineNC guifg=#071f1f guibg=#5f9f9f term=bold ctermfg=3 ctermbg=2 
-highlight Visual      guifg=yellow guibg=blue term=reverse cterm=bold ctermfg=6 ctermbg=5 
-
-highlight MyTagListTagName  guifg=yellow term=underline ctermfg=3 
-highlight MyTagListTagScope guifg=green term=underline cterm=bold ctermfg=3 
 
