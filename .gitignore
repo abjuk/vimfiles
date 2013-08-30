@@ -6,3 +6,6 @@ Thumbs.db
 
 # Vim swapfiles
 *.swp
+
+# Bundle directory is managed by Vundle
+bundle/
