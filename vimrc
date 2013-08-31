@@ -13,19 +13,24 @@ set autowrite
 set background=dark
 set backspace=2
 set backup
-set backupdir=~/.backup
+if has('win32')
+	set backupdir=$HOME/vimfiles/backup
+elseif has('mac')
+	set backupdir=~/.backup
+endif
 set backupext=.bak
 set cindent
 set clipboard=unnamed
 set cmdheight=1
 set completeopt=menu,menuone,longest
-if version >= 600
-    set foldlevel=11
-    set foldmethod=syntax
-    "set foldtext=/\\(.*\\)/>\\d\ \\f\ lines...\ \ \ 
-endif
+set foldlevel=11
+set foldmethod=syntax
 set formatoptions+=1
-set guifont=Menlo:h14
+if has('win32')
+	set guifont=Lucida_Console:h12
+elseif has('mac')
+	set guifont=Menlo:h14
+end
 set guioptions-=T
 set incsearch
 set ignorecase
@@ -66,7 +71,7 @@ filetype off
 """""""""""""""""""""""""""""""""""""""""
 
 " Vundle
-set runtimepath+=~/.vim/bundle/vundle/
+set runtimepath+=$HOME/vimfiles/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
