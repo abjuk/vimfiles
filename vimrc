@@ -64,6 +64,7 @@ set tabstop=4
 " steps up the dir tree til it finds a .tags file.
 set tags=./tags,tags,~/rocketman2/.tags
 "set textwidth=78
+set wildmenu
 
 filetype off
 
@@ -172,20 +173,18 @@ au BufNewFile,BufRead *.hdt,*.hdp,*.hdc set filetype=xml
 """"""""""""""""""""""""""""""""""""""""""
 "  Autocommands
 """"""""""""""""""""""""""""""""""""""""""
-" Autosave any time we lose focus or leave the buffer
-au FocusLost * update
-au BufLeave * update
-
-" C Coding, 1P standards
-au FileType cpp,c source ~/.vim/MFCrc.vim
-au FileType cpp,c,objc,objcpp,actionscript setlocal ts=4 sts=4 sw=4 expandtab
-au FileType java setlocal ts=4 sts=4 sw=4 expandtab
-"au FileType cpp,c,objc,objcpp,actionscript,java set sts=3
-"au FileType cpp,c,objc,objcpp,actionscript,java set sw=3
-"au FileType cpp,c,objc,objcpp,actionscript,java set expandtab
-" Perl Coding
-au FileType perl set ts=4 cindent
-au FileType perl highlight Identifier  term=underline ctermfg=3 guifg=yellow 
+augroup Coding
+	au!
+	" Autosave any time we lose focus or leave the buffer
+	au FocusLost,BufLeave * update
+	" C Coding, 1P standards
+	au FileType cpp,c source ~/.vim/MFCrc.vim
+	au FileType cpp,c,objc,objcpp,actionscript setlocal ts=4 sts=4 sw=4 expandtab
+	au FileType java setlocal ts=4 sts=4 sw=4 expandtab
+	" Perl Coding
+	au FileType perl set ts=4 cindent
+	au FileType perl highlight Identifier  term=underline ctermfg=3 guifg=yellow 
+augroup END
 
 syntax on
 
