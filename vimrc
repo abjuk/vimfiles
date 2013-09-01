@@ -4,13 +4,14 @@ autocmd!
 behave xterm
 "so $VIMRUNTIME/mswin.vim
 
+colorscheme abjuk
+
 """""""""""""""""""""""""""""""""""""""""
 "  Global Settings
 """""""""""""""""""""""""""""""""""""""""
 set autoindent
 set autoread
 set autowrite
-set background=dark
 set backspace=2
 set backup
 if has('win32')
