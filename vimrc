@@ -83,7 +83,12 @@ filetype off
 """""""""""""""""""""""""""""""""""""""""
 
 " Vundle
-set runtimepath+=$HOME/vimfiles/bundle/vundle/
+if has('win32')
+	set runtimepath+=$HOME/vimfiles/bundle/vundle/
+else
+	set runtimepath+=~/.vim/bundle/vundle/
+endif
+
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
