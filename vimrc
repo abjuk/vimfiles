@@ -87,6 +87,9 @@ set runtimepath+=$HOME/vimfiles/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
+" Vim-scripts
+Bundle 'a.vim'
+
 " YouCompleteMe
 "Bundle 'Valloric/YouCompleteMe'
 
