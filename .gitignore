@@ -10,5 +10,7 @@ Thumbs.db
 # Bundle directory is managed by Vundle
 bundle/
 
-# Backup dir is local
+# Directories for backup/temp/undo files
 backup/
+temp/
+undo/

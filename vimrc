@@ -14,11 +14,6 @@ set autoread
 set autowrite
 set backspace=2
 set backup
-if has('win32')
-	set backupdir=$HOME/vimfiles/backup
-elseif has('mac')
-	set backupdir=~/.backup
-endif
 set backupext=.bak
 set cindent
 set clipboard=unnamed
@@ -27,11 +22,6 @@ set completeopt=menu,menuone,longest
 set foldlevel=11
 set foldmethod=syntax
 set formatoptions+=1
-if has('win32')
-	set guifont=Lucida_Console:h12
-elseif has('mac')
-	set guifont=Menlo:h14
-end
 set guioptions-=T
 set incsearch
 set ignorecase
@@ -64,7 +54,27 @@ set tabstop=4
 " steps up the dir tree til it finds a .tags file.
 set tags=./tags,tags,~/rocketman2/.tags
 "set textwidth=78
+set undofile
 set wildmenu
+
+"""""""""""""""""""""""""""""""""""""""""
+"  OS Specific
+"""""""""""""""""""""""""""""""""""""""""
+if has('win32')
+	set backupdir=$HOME/vimfiles/backup,.
+	set directory=$HOME/vimfiles/temp//,.
+	set undodir=$HOME/vimfiles/undo,.
+else
+	set backupdir=~/.vim/backup,.
+	set directory=~/.vim/temp//,.
+	set undodir=~/.vim/undo,.
+endif
+
+if has('win32')
+	set guifont=Lucida_Console:h12
+elseif has('mac')
+	set guifont=Menlo:h14
+end
 
 filetype off
 
