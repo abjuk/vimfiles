@@ -22,7 +22,7 @@ highlight Normal      guifg=cyan guibg=black ctermfg=white ctermbg=black
 highlight Cursor      guifg=black guibg=Green 
 highlight Delimiter   guifg=Red term=bold cterm=bold ctermfg=1 gui=bold 
 highlight Directory   guifg=Blue term=bold ctermfg=DarkBlue 
-highlight ErrorMsg    guifg=Red term=standout cterm=bold ctermfg=1 gui=bold 
+highlight ErrorMsg    guifg=Red guibg=black term=standout cterm=bold ctermfg=1 gui=bold 
 highlight LineNr      guifg=Brown term=underline cterm=bold ctermfg=3 
 highlight MoreMsg     guifg=Green term=bold cterm=bold ctermfg=2 gui=bold 
 highlight NonText     guifg=DarkSlateGray term=bold ctermfg=2 
