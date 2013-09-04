@@ -6,6 +6,8 @@ behave xterm
 
 colorscheme abjuk
 
+let mapleader = "q"
+
 """""""""""""""""""""""""""""""""""""""""
 "  Global Settings
 """""""""""""""""""""""""""""""""""""""""
@@ -22,6 +24,7 @@ set completeopt=menu,menuone,longest
 set foldlevel=11
 set foldmethod=syntax
 set formatoptions+=1
+set gdefault
 set guioptions-=T
 set incsearch
 set ignorecase
@@ -33,6 +36,7 @@ set mousemodel=popup_setpos
 set nohlsearch
 set omnifunc=ClangComplete
 "set printerfont=Terminal:h9
+set relativenumber
 set report=0
 set scrolloff=4
 set selectmode=mouse
@@ -131,6 +135,15 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 """"""""""""""""""""""""""""""""""""""""""
 "  Key Mappings
 """"""""""""""""""""""""""""""""""""""""""
+
+" Arrow keys up and down by display lines instead of file lines
+nnoremap <down> gj
+inoremap <down> gj
+nnoremap <up> gk
+inoremap <up> gk
+
+" Map Q to q so q can be <leader>
+nnoremap Q q
 
 " Make Y yank to end of line, like C and D
 nnoremap Y y$
