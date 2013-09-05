@@ -34,6 +34,7 @@ set listchars=tab:>-,eol:$
 set mousehide
 set mousemodel=popup_setpos
 set nohlsearch
+set number
 set omnifunc=ClangComplete
 "set printerfont=Terminal:h9
 set relativenumber
@@ -102,13 +103,35 @@ Bundle 'a.vim'
 " YouCompleteMe
 "Bundle 'Valloric/YouCompleteMe'
 
+" NERDCommenter
+Bundle 'scrooloose/nerdcommenter'
+
+" NERDTree
+Bundle 'scrooloose/nerdtree'
+
+" SnipMate
+Bundle 'msanders/snipmate.vim'
+let g:snips_author = 'Kris Pivin'
+
+" CtrlP
+Bundle 'kien/ctrlp.vim'
+let g:ctrlp_working_path_mode = 'ra'
+"let g:ctrlp_root_markers = ['build.xml']
+"let g:ctrlp_follow_symlinks = 1
+let g:ctrlp_by_filename = 1
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:24,results:24'
+set wildignore+=*.o,*.obj,*.bin,*.ani
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
+set wildignore+=*/assets/*
+let g:ctrlp_custom_ignore = { 'dir': '\vassets$', 'file': '\v\.(exe|so|dll|bin)$', }
+
 
 
 " TagList
-let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_Show_Menu = 1
-let Tlist_Use_Right_Window = 1
+"let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+"let Tlist_Exit_OnlyWindow = 1
+"let Tlist_Show_Menu = 1
+"let Tlist_Use_Right_Window = 1
 
 " Source Safe plugin
 "let $SSDIR="C:\\Program Files\\Microsoft Visual Studio\\VSS"
@@ -121,16 +144,16 @@ let Tlist_Use_Right_Window = 1
 "let OmniCpp_DefaultNamespaces = ["dslib", "game"]
 
 " Clang Complete
-let g:clang_auto_select = 0
-let g:clang_complete_auto = 0
-let g:clang_use_library = 1
-let g:clang_complete_copen = 1
-let g:clang_complete_patterns = 0
-let g:clang_user_options='|| exit 0'
+"let g:clang_auto_select = 0
+"let g:clang_complete_auto = 0
+"let g:clang_use_library = 1
+"let g:clang_complete_copen = 1
+"let g:clang_complete_patterns = 0
+"let g:clang_user_options='|| exit 0'
 
 " Supertab
-let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabClosePreviewOnPopupClose = 1
+"let g:SuperTabDefaultCompletionType = "context"
+"let g:SuperTabClosePreviewOnPopupClose = 1
 
 """"""""""""""""""""""""""""""""""""""""""
 "  Key Mappings
