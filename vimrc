@@ -62,6 +62,8 @@ set tags=./tags,tags,~/rocketman2/.tags
 set undofile
 set wildmenu
 
+"Always show filetypes in syntax menu
+let do_syntax_sel_menu = 1
 """""""""""""""""""""""""""""""""""""""""
 "  OS Specific
 """""""""""""""""""""""""""""""""""""""""
