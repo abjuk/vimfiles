@@ -117,15 +117,18 @@ let g:snips_author = 'Kris Pivin'
 
 " CtrlP
 Bundle 'kien/ctrlp.vim'
-let g:ctrlp_working_path_mode = 'ra'
-"let g:ctrlp_root_markers = ['build.xml']
+"let g:ctrlp_by_filename = 1
 "let g:ctrlp_follow_symlinks = 1
-let g:ctrlp_by_filename = 1
-let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:24,results:24'
-set wildignore+=*.o,*.obj,*.bin,*.ani
+"let g:ctrlp_root_markers = ['build.xml']
+let g:ctrlp_use_caching = 0
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_match_window = 'top,order:ttb,min:1,max:24,results:24'
+set wildignore+=*.o,*.obj,*.bin,*.ani,*.swp,*.bak
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
-set wildignore+=*/assets/*
-let g:ctrlp_custom_ignore = { 'dir': '\vassets$', 'file': '\v\.(exe|so|dll|bin)$', }
+set wildignore+=*/assets/*,*/undo/*
+"let g:ctrlp_custom_ignore = { 'dir': '\vassets$', 'file': '\v\.(exe|so|dll|bin)$', }
+"let g:ctrlp_custom_ignore = '\v\.(swp|bak)$'
+"let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
 
 
 
