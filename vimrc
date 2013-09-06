@@ -120,15 +120,15 @@ Bundle 'kien/ctrlp.vim'
 "let g:ctrlp_by_filename = 1
 "let g:ctrlp_follow_symlinks = 1
 "let g:ctrlp_root_markers = ['build.xml']
-let g:ctrlp_use_caching = 0
+let g:ctrlp_use_caching = 1
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:24,results:24'
-set wildignore+=*.o,*.obj,*.bin,*.ani,*.swp,*.bak
+set wildignore+=*.o,*.obj,*.bin,*.ani,*.swp,*.bak,*.pch,*.apk*
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
-set wildignore+=*/assets/*,*/undo/*
+set wildignore+=*/assets/*,*/undo/*,*/Content*/*
 "let g:ctrlp_custom_ignore = { 'dir': '\vassets$', 'file': '\v\.(exe|so|dll|bin)$', }
 "let g:ctrlp_custom_ignore = '\v\.(swp|bak)$'
-"let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
+"let g:ctrlp_custom_ignore = '\v\~$|\.(o|obj|swp|bak|wav|mp3|ogg|ani|pch|apk*)$|(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])'
 
 
 
