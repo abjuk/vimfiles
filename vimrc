@@ -103,7 +103,8 @@ Bundle 'gmarik/vundle'
 Bundle 'a.vim'
 
 " YouCompleteMe
-"Bundle 'Valloric/YouCompleteMe'
+Bundle 'Valloric/YouCompleteMe'
+let g:ycm_confirm_extra_conf = 1
 
 " NERDCommenter
 Bundle 'scrooloose/nerdcommenter'
@@ -212,6 +213,7 @@ nnoremap <D-Up> [c
 nnoremap <D-Down> ]c
 
 nnoremap <leader>v :source $MYVIMRC<CR>
+nnoremap <leader>bi :BundleInstall<CR>
 
 """"""""""""""""""""""""""""""""""""""""""
 "  Filetypes
