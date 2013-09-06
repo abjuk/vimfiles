@@ -54,7 +54,7 @@ set sidescrolloff=4
 set smartcase
 set softtabstop=4
 "set statusline=%<%f%y%h%m%r[%{SSGetLockStatus()}]%=%-14(%l,%c%V%)\ %P
-set statusline=%<%f%y%h%m%r%=%-14(%l,%c%V%)\ %P
+set statusline=%<%f%y%h%m%r%=%(%l\ /\ %L%)\ 
 set tabstop=4
 " steps up the dir tree til it finds a .tags file.
 set tags=./tags,tags,~/rocketman2/.tags
