@@ -166,12 +166,14 @@ set wildignore+=*/assets/*,*/undo/*
 
 " Arrow keys up and down by display lines instead of file lines
 nnoremap <down> gj
-inoremap <down> gj
+inoremap <down> <Esc>gja
 nnoremap <up> gk
-inoremap <up> gk
+inoremap <up> <Esc>gka
 
 " Map Q to q so q can be <leader>
 nnoremap Q q
+" In case we time out, don't record a macro
+nnoremap q <nop>
 
 " Make Y yank to end of line, like C and D
 nnoremap Y y$
@@ -181,24 +183,24 @@ nnoremap <Space> za
 
 " Puts spaces around all operators on a line.
 " Gets confused by paren-bangs.
-nmap <F5> :s/\(\w\+]*)*\)\([*/%+\-<>!&\^<Bar>=][&<Bar><]\==\=\)\((*!*"*\-\=\w\+\)/\1<Space>\2<Space>\3/g<CR>
+nnoremap <F5> :s/\(\w\+]*)*\)\([*/%+\-<>!&\^<Bar>=][&<Bar><]\==\=\)\((*!*"*\-\=\w\+\)/\1<Space>\2<Space>\3/g<CR>
 " Ditto for all lines in the file.
-nmap <S-F5> :g!/"/s/\(\w\+]*)*\)\([*/%+\-<>!&\^<Bar>=][&<Bar><]\==\=\)\((*!*"*\-\=\w\+\)/\1<Space>\2<Space>\3/g<CR>
+nnoremap <S-F5> :g!/"/s/\(\w\+]*)*\)\([*/%+\-<>!&\^<Bar>=][&<Bar><]\==\=\)\((*!*"*\-\=\w\+\)/\1<Space>\2<Space>\3/g<CR>
 
 " Put spaces after semicolons where necessary
-nmap <F6> :s/;\(\k\)/;<Space>\1/g<CR>
+nnoremap <F6> :s/;\(\k\)/;<Space>\1/g<CR>
 " Ditto for entire file
-nmap <S-F6> :%s/;\(\k\)/;<Space>\1/g<CR>
+nnoremap <S-F6> :%s/;\(\k\)/;<Space>\1/g<CR>
 
 " SVN diff on current file
-nmap <F8> :set columns=188<CR>:VCSVimDiff<CR>
-nmap <S-F8> :set columns=110<CR>
+nnoremap <F8> :set columns=188<CR>:VCSVimDiff<CR>
+nnoremap <S-F8> :set columns=110<CR>
 
 " Run ctags
-nmap <F4> :!~/bin/dirtags .<CR>
+nnoremap <F4> :!~/bin/dirtags .<CR>
 
 " Save files in unix format
-"nmap <F4> :w ++ff=unix<CR>
+"nnoremap <F4> :w ++ff=unix<CR>
 
 " ^] in insert mode completes tag
 inoremap  
@@ -206,8 +208,10 @@ inoremap  
 inoremap  
 
 " Move up and down between diffs a la Cornerstone
-nmap <D-Up> [c
-nmap <D-Down> ]c
+nnoremap <D-Up> [c
+nnoremap <D-Down> ]c
+
+nnoremap <leader>v :source $MYVIMRC<CR>
 
 """"""""""""""""""""""""""""""""""""""""""
 "  Filetypes
