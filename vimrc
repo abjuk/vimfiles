@@ -27,6 +27,7 @@ set foldmethod=syntax
 set formatoptions+=1
 set gdefault
 set guioptions-=T
+set hlsearch
 set incsearch
 set ignorecase
 set laststatus=2
@@ -34,7 +35,6 @@ set linebreak
 set listchars=tab:>-,eol:$
 set mousehide
 set mousemodel=popup_setpos
-set nohlsearch
 set number
 set omnifunc=ClangComplete
 "set printerfont=Terminal:h9
@@ -164,6 +164,8 @@ nnoremap Q q
 " In case we time out, don't record a macro
 nnoremap q <nop>
 
+nnoremap <Esc> :nohlsearch<CR><Esc>
+
 " Make Y yank to end of line, like C and D
 nnoremap Y y$
 
@@ -232,6 +234,7 @@ augroup Coding
 	au FocusLost,BufLeave * update
 	" C Coding, 1P standards
 	au FileType cpp,c,objc,objcpp,actionscript setlocal ts=4 sts=4 sw=4 expandtab
+	au FileType cpp,c,objc,objcpp,actionscript let c_no_curly_error = 1
 	au FileType java setlocal ts=4 sts=4 sw=4 expandtab
 	" Perl Coding
 	au FileType perl set ts=4 cindent
