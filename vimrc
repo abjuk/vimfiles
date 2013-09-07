@@ -88,8 +88,6 @@ filetype off
 """""""""""""""""""""""""""""""""""""""""
 "  Plugins
 """""""""""""""""""""""""""""""""""""""""
-
-" Vundle
 if has('win32')
 	set runtimepath+=$HOME/vimfiles/bundle/vundle/
 else
@@ -99,31 +97,26 @@ endif
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
-" Vim-scripts
 Bundle 'a.vim'
 
+Bundle 'embear/vim-localvimrc'
+let g:localvimrc_ask = 0
+
+Bundle 'scrooloose/nerdcommenter'
+
+Bundle 'scrooloose/nerdtree'
+
+Bundle 'msanders/snipmate.vim'
+let g:snips_author = 'Kris Pivin'
+
 if has('mac')
-	" YouCompleteMe
 	Bundle 'Valloric/YouCompleteMe'
 	let g:ycm_confirm_extra_conf = 1
 	let g:ycm_collect_identifiers_from_tags_files = 1
 end
 
-" NERDCommenter
-Bundle 'scrooloose/nerdcommenter'
-
-" NERDTree
-Bundle 'scrooloose/nerdtree'
-
-" SnipMate
-Bundle 'msanders/snipmate.vim'
-let g:snips_author = 'Kris Pivin'
-
 " CtrlP
 Bundle 'kien/ctrlp.vim'
-"let g:ctrlp_by_filename = 1
-"let g:ctrlp_follow_symlinks = 1
-"let g:ctrlp_root_markers = ['build.xml']
 let g:ctrlp_use_caching = 1
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:24,results:24'
@@ -134,23 +127,12 @@ set wildignore+=*/assets/*,*/undo/*,*/Content*/*
 "let g:ctrlp_custom_ignore = '\v\.(swp|bak)$'
 "let g:ctrlp_custom_ignore = '\v\~$|\.(o|obj|swp|bak|wav|mp3|ogg|ani|pch|apk*)$|(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])'
 
-Bundle 'embear/vim-localvimrc'
-let g:localvimrc_ask = 0
-
-
 
 " TagList
 "let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 "let Tlist_Exit_OnlyWindow = 1
 "let Tlist_Show_Menu = 1
 "let Tlist_Use_Right_Window = 1
-
-" Source Safe plugin
-"let $SSDIR="C:\\Program Files\\Microsoft Visual Studio\\VSS"
-"let $SSDIR="//zeus/DSI_VSS_2005_NET/"
-"let ssLocalTree="c:._Src2"
-"let ssMenuPath=""
-"let ssUserName="kpivin"
 
 " Omnicomplete 
 "let OmniCpp_DefaultNamespaces = ["dslib", "game"]
