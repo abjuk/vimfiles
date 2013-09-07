@@ -21,6 +21,7 @@ set cindent
 set clipboard=unnamed
 set cmdheight=1
 set completeopt=menu,menuone,longest
+set copyindent
 set foldlevel=11
 set foldmethod=syntax
 set formatoptions+=1
@@ -102,10 +103,12 @@ Bundle 'gmarik/vundle'
 " Vim-scripts
 Bundle 'a.vim'
 
-" YouCompleteMe
-Bundle 'Valloric/YouCompleteMe'
-let g:ycm_confirm_extra_conf = 1
-let g:ycm_collect_identifiers_from_tags_files = 1
+if has('mac')
+	" YouCompleteMe
+	Bundle 'Valloric/YouCompleteMe'
+	let g:ycm_confirm_extra_conf = 1
+	let g:ycm_collect_identifiers_from_tags_files = 1
+end
 
 " NERDCommenter
 Bundle 'scrooloose/nerdcommenter'
