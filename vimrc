@@ -57,8 +57,7 @@ set softtabstop=4
 "set statusline=%<%f%y%h%m%r[%{SSGetLockStatus()}]%=%-14(%l,%c%V%)\ %P
 set statusline=%<%f%y%h%m%r%=%(%l\ /\ %L%)\ 
 set tabstop=4
-" steps up the dir tree til it finds a .tags file.
-set tags=./tags,tags,~/rocketman2/.tags
+set tags=./.tags,./tags,.tags,tags
 "set textwidth=78
 set undofile
 set wildmenu
@@ -134,6 +133,9 @@ set wildignore+=*/assets/*,*/undo/*,*/Content*/*
 "let g:ctrlp_custom_ignore = { 'dir': '\vassets$', 'file': '\v\.(exe|so|dll|bin)$', }
 "let g:ctrlp_custom_ignore = '\v\.(swp|bak)$'
 "let g:ctrlp_custom_ignore = '\v\~$|\.(o|obj|swp|bak|wav|mp3|ogg|ani|pch|apk*)$|(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])'
+
+Bundle 'embear/vim-localvimrc'
+let g:localvimrc_ask = 0
 
 
 
