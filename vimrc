@@ -106,13 +106,21 @@ Bundle 'scrooloose/nerdcommenter'
 
 Bundle 'scrooloose/nerdtree'
 
-Bundle 'msanders/snipmate.vim'
+"Bundle 'msanders/snipmate.vim'
+"let g:snips_author = 'Kris Pivin'
+
+Bundle 'SirVer/ultisnips'
 let g:snips_author = 'Kris Pivin'
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 if has('mac')
 	Bundle 'Valloric/YouCompleteMe'
 	let g:ycm_confirm_extra_conf = 1
 	let g:ycm_collect_identifiers_from_tags_files = 1
+	"let g:ycm_key_list_select_completion = [‘<C-TAB>’, ‘<Down>’]
+	"let g:ycm_key_list_previous_completion = [‘<C-S-TAB>’, ‘<Up>’]
 end
 
 " CtrlP
