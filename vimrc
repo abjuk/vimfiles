@@ -100,6 +100,8 @@ Bundle 'gmarik/vundle'
 
 Bundle 'a.vim'
 
+Bundle 'gerw/vim-HiLinkTrace'
+
 Bundle 'embear/vim-localvimrc'
 let g:localvimrc_ask = 0
 
