@@ -20,11 +20,11 @@ set backupext=.bak
 set cindent
 set clipboard=unnamed
 set cmdheight=1
-set completeopt=menu,menuone,longest
+set completeopt=menu,menuone
 set copyindent
-set foldlevel=11
+set foldlevelstart=99
 set foldmethod=syntax
-set formatoptions+=1
+set formatoptions+=1j
 set gdefault
 set guioptions-=T
 set hlsearch
@@ -34,10 +34,8 @@ set laststatus=2
 set linebreak
 set listchars=tab:>-,eol:$
 set mousehide
-set mousemodel=popup_setpos
+set mousemodel=popup
 set number
-set omnifunc=ClangComplete
-"set printerfont=Terminal:h9
 set relativenumber
 set report=0
 set scrolloff=4
@@ -54,10 +52,9 @@ set sidescroll=8
 set sidescrolloff=4
 set smartcase
 set softtabstop=4
-"set statusline=%<%f%y%h%m%r[%{SSGetLockStatus()}]%=%-14(%l,%c%V%)\ %P
 set statusline=%<%f%y%h%m%r%=%(%l\ /\ %L%)\ 
 set tabstop=4
-set tags=./.tags,./tags,.tags,tags
+set tags=./.tags;,.tags
 "set textwidth=78
 set undofile
 set wildmenu
