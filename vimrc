@@ -111,17 +111,15 @@ Bundle 'scrooloose/nerdtree'
 
 Bundle 'SirVer/ultisnips'
 let g:snips_author = 'Kris Pivin'
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsExpandTrigger="<C-J>"
+let g:UltiSnipsJumpForwardTrigger="<C-J>"
+let g:UltiSnipsJumpBackwardTrigger="<C-K>"
 
-if has('mac')
-	Bundle 'Valloric/YouCompleteMe'
-	let g:ycm_confirm_extra_conf = 0
-	let g:ycm_collect_identifiers_from_tags_files = 1
-	let g:ycm_key_list_select_completion = ['<Enter>', '<Down>']
-	let g:ycm_key_list_previous_completion = ['<Up>']
-end
+Bundle 'Valloric/YouCompleteMe'
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_key_list_select_completion = ['<Tab>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<Up>']
 
 " CtrlP
 Bundle 'kien/ctrlp.vim'
