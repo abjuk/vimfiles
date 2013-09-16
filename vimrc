@@ -226,6 +226,8 @@ augroup Coding
 	" Perl Coding
 	au FileType perl set ts=4 cindent
 	au FileType perl highlight Identifier  term=underline ctermfg=3 guifg=yellow 
+	" Vim Files, K brings up :help for keyword under cursor
+	au FileType vim set keywordprg=:help
 augroup END
 
 syntax on
