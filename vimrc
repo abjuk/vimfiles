@@ -165,15 +165,15 @@ set wildignore+=*/assets/*,*/undo/*,*/Content*/*
 """"""""""""""""""""""""""""""""""""""""""
 
 " Arrow keys up and down by display lines instead of file lines
-nnoremap <down> gj
-inoremap <down> <Esc>gja
-nnoremap <up> gk
-inoremap <up> <Esc>gka
+nnoremap <Down> gj
+inoremap <Down> <Esc>gja
+nnoremap <Up> gk
+inoremap <Up> <Esc>gka
 
 " Map Q to q so q can be <leader>
 nnoremap Q q
 " In case we time out, don't record a macro
-nnoremap q <nop>
+nnoremap q <Nop>
 
 nnoremap <Esc> :nohlsearch<CR><Esc>
 
@@ -213,8 +213,8 @@ inoremap  
 nnoremap <D-Up> [c
 nnoremap <D-Down> ]c
 
-nnoremap <leader>v :source $MYVIMRC<CR>
-nnoremap <leader>bi :BundleInstall<CR>
+nnoremap <Leader>v :source $MYVIMRC<CR>
+nnoremap <Leader>bi :BundleInstall<CR>
 
 """"""""""""""""""""""""""""""""""""""""""
 "  Filetypes
