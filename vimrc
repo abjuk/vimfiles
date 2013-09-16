@@ -106,6 +106,9 @@ Bundle 'scrooloose/nerdcommenter'
 
 Bundle 'scrooloose/nerdtree'
 
+Bundle 'majutsushi/tagbar'
+nnoremap <F9> :TagbarToggle<CR>
+
 "Bundle 'msanders/snipmate.vim'
 "let g:snips_author = 'Kris Pivin'
 
