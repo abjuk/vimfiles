@@ -224,10 +224,10 @@ augroup Coding
 	au FileType cpp,c,objc,objcpp,actionscript let c_no_curly_error = 1
 	au FileType java setlocal ts=4 sts=4 sw=4 expandtab
 	" Perl Coding
-	au FileType perl set ts=4 cindent
+	au FileType perl setlocal ts=4 cindent
 	au FileType perl highlight Identifier  term=underline ctermfg=3 guifg=yellow 
 	" Vim Files, K brings up :help for keyword under cursor
-	au FileType vim set keywordprg=:help
+	au FileType vim setlocal keywordprg=:help
 augroup END
 
 syntax on
