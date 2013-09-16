@@ -14,3 +14,5 @@ bundle/
 backup/
 temp/
 undo/
+
+.ycm_extra_conf.pyc
