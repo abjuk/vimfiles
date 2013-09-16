@@ -110,9 +110,6 @@ Bundle 'majutsushi/tagbar'
 nnoremap <F9> :TagbarToggle<CR>
 let g:tagbar_expand = 1
 
-"Bundle 'msanders/snipmate.vim'
-"let g:snips_author = 'Kris Pivin'
-
 Bundle 'SirVer/ultisnips'
 let g:snips_author = 'Kris Pivin'
 let g:UltiSnipsExpandTrigger="<C-J>"
@@ -138,28 +135,6 @@ set wildignore+=*/assets/*,*/undo/*,*/Content*/*
 "let g:ctrlp_custom_ignore = { 'dir': '\vassets$', 'file': '\v\.(exe|so|dll|bin)$', }
 "let g:ctrlp_custom_ignore = '\v\.(swp|bak)$'
 "let g:ctrlp_custom_ignore = '\v\~$|\.(o|obj|swp|bak|wav|mp3|ogg|ani|pch|apk*)$|(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])'
-
-
-" TagList
-"let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
-"let Tlist_Exit_OnlyWindow = 1
-"let Tlist_Show_Menu = 1
-"let Tlist_Use_Right_Window = 1
-
-" Omnicomplete 
-"let OmniCpp_DefaultNamespaces = ["dslib", "game"]
-
-" Clang Complete
-"let g:clang_auto_select = 0
-"let g:clang_complete_auto = 0
-"let g:clang_use_library = 1
-"let g:clang_complete_copen = 1
-"let g:clang_complete_patterns = 0
-"let g:clang_user_options='|| exit 0'
-
-" Supertab
-"let g:SuperTabDefaultCompletionType = "context"
-"let g:SuperTabClosePreviewOnPopupClose = 1
 
 """"""""""""""""""""""""""""""""""""""""""
 "  Key Mappings
