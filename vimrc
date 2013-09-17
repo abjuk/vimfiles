@@ -6,8 +6,6 @@ behave xterm
 
 colorscheme abjuk
 
-let mapleader = "q"
-
 """""""""""""""""""""""""""""""""""""""""
 "  Global Settings
 """""""""""""""""""""""""""""""""""""""""
@@ -140,23 +138,33 @@ set wildignore+=*/assets/*,*/undo/*,*/Content*/*
 "  Key Mappings
 """"""""""""""""""""""""""""""""""""""""""
 
+" q is a easier than \ as a leader
+let mapleader = "q"
+
+" On the off chance we need q functionality (Q is Ex-Mode, goodbye)
+nnoremap Q q
+" In case we time out, don't record a macro
+nnoremap q <Nop>
+
+" Some leader mappings, pretty self-explanatory
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>v :source $MYVIMRC<CR>
+nnoremap <Leader>bi :BundleInstall<CR>
+
+" Easily remove search highlighting with Esc
+nnoremap <Esc> :nohlsearch<CR><Esc>
+
 " Arrow keys up and down by display lines instead of file lines
 nnoremap <Down> gj
 inoremap <Down> <Esc>gja
 nnoremap <Up> gk
 inoremap <Up> <Esc>gka
 
-" Map Q to q so q can be <leader>
-nnoremap Q q
-" In case we time out, don't record a macro
-nnoremap q <Nop>
-
-nnoremap <Esc> :nohlsearch<CR><Esc>
-
 " Make Y yank to end of line, like C and D
 nnoremap Y y$
 
 " Use the spacebar to toggle the current fold in normal mode
+" TODO:  Find something more useful to do with spacebar
 nnoremap <Space> za
 
 " Puts spaces around all operators on a line.
@@ -188,9 +196,6 @@ inoremap  
 " Move up and down between diffs a la Cornerstone
 nnoremap <D-Up> [c
 nnoremap <D-Down> ]c
-
-nnoremap <Leader>v :source $MYVIMRC<CR>
-nnoremap <Leader>bi :BundleInstall<CR>
 
 """"""""""""""""""""""""""""""""""""""""""
 "  Filetypes
