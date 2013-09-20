@@ -51,7 +51,7 @@ set sidescrolloff=4
 set smartcase
 set softtabstop=4
 set statusline=%<%f%y%h%m%r%=%(%l\ /\ %L%)\ 
-set tabstop=4
+set tabstop=8
 set tags=./.tags;,.tags
 "set textwidth=78
 set undofile
