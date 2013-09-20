@@ -94,6 +94,10 @@ endif
 Bundle 'gmarik/vundle'
 
 Bundle 'a.vim'
+let g:alternateExtensions_h = "inl,c,m,mm,cpp,cxx,cc,CC"
+let g:alternateExtensions_m = "c,cpp,h"
+let g:alternateExtensions_mm = "c,cpp,h"
+let g:alternateNoDefaultAlternate = 1
 
 Bundle 'gerw/vim-HiLinkTrace'
 
