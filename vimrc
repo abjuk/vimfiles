@@ -99,6 +99,9 @@ let g:alternateExtensions_m = "c,cpp,h"
 let g:alternateExtensions_mm = "c,cpp,h"
 let g:alternateNoDefaultAlternate = 1
 
+Bundle ('rhysd/clever-f.vim')
+let g:clever_f_fix_key_direction = 1
+
 Bundle 'gerw/vim-HiLinkTrace'
 
 Bundle 'embear/vim-localvimrc'
