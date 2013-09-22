@@ -59,6 +59,9 @@ set wildmenu
 
 "Always show filetypes in syntax menu
 let do_syntax_sel_menu = 1
+" q is easier than \ as a leader
+let mapleader = "q"
+
 """""""""""""""""""""""""""""""""""""""""
 "  OS Specific
 """""""""""""""""""""""""""""""""""""""""
@@ -92,12 +95,14 @@ else
 endif
 
 Bundle 'gmarik/vundle'
+nnoremap <Leader>bi :BundleInstall<CR>
 
 Bundle 'a.vim'
 let g:alternateExtensions_h = "inl,c,m,mm,cpp,cxx,cc,CC"
 let g:alternateExtensions_m = "c,cpp,h"
 let g:alternateExtensions_mm = "c,cpp,h"
 let g:alternateNoDefaultAlternate = 1
+nnoremap <Leader>a :A<CR>
 
 Bundle ('rhysd/clever-f.vim')
 let g:clever_f_fix_key_direction = 1
@@ -141,11 +146,7 @@ set wildignore+=*/assets/*,*/undo/*,*/Content*/*
 """"""""""""""""""""""""""""""""""""""""""
 "  Key Mappings
 """"""""""""""""""""""""""""""""""""""""""
-
-" q is a easier than \ as a leader
-let mapleader = "q"
-
-" On the off chance we need q functionality (Q is Ex-Mode, goodbye)
+" Using q as leader, but macros are handy (Q is Ex-Mode, goodbye)
 nnoremap Q q
 " In case we time out, don't record a macro
 nnoremap q <Nop>
@@ -153,8 +154,6 @@ nnoremap q <Nop>
 " Some leader mappings, pretty self-explanatory
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>v :source $MYVIMRC<CR>
-nnoremap <Leader>bi :BundleInstall<CR>
-nnoremap <Leader>a :A<CR>
 
 " Easily remove search highlighting with Esc
 nnoremap <Esc> :nohlsearch<CR><Esc>
