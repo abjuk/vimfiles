@@ -157,9 +157,13 @@ nnoremap q <Nop>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>v :source $MYVIMRC<CR>
 nnoremap <Leader>bi :BundleInstall<CR>
+nnoremap <Leader>a :A<CR>
 
 " Easily remove search highlighting with Esc
 nnoremap <Esc> :nohlsearch<CR><Esc>
+
+" Save us from hitting shift all the time
+nnoremap ; :
 
 " Arrow keys up and down by display lines instead of file lines
 nnoremap <Down> gj
