@@ -107,6 +107,9 @@ nnoremap <Leader>a :A<CR>
 Bundle ('rhysd/clever-f.vim')
 let g:clever_f_fix_key_direction = 1
 
+Bundle ('Raimondi/delimitMate')
+let delimitMate_expand_cr = 1
+
 Bundle 'gerw/vim-HiLinkTrace'
 
 Bundle 'embear/vim-localvimrc'
