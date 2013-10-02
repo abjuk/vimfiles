@@ -173,6 +173,9 @@ inoremap <Up> <Esc>gka
 " Make Y yank to end of line, like C and D
 nnoremap Y y$
 
+" Mark movements go to column by default
+nnoremap ' `
+
 " Use the spacebar to toggle the current fold in normal mode
 " TODO:  Find something more useful to do with spacebar
 nnoremap <Space> za
