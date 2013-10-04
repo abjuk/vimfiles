@@ -230,6 +230,9 @@ augroup END
 " Hero Designer Files are XML
 au BufNewFile,BufRead *.hdt,*.hdp,*.hdc set filetype=xml
 
+" Tags files
+au BufNewFile,BufRead .tags set filetype=tags
+
 """"""""""""""""""""""""""""""""""""""""""
 "  Autocommands
 """"""""""""""""""""""""""""""""""""""""""
