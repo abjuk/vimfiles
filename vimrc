@@ -1,9 +1,3 @@
-set nocompatible
-" Clear all autocommands
-autocmd!	
-behave xterm
-"so $VIMRUNTIME/mswin.vim
-
 colorscheme abjuk
 
 """""""""""""""""""""""""""""""""""""""""
@@ -37,7 +31,6 @@ set number
 set relativenumber
 set report=0
 set scrolloff=4
-set selectmode=mouse
 set shiftround
 set shiftwidth=4
 set shortmess+=r
