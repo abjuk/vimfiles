@@ -11,8 +11,6 @@ set backup
 set backupext=.bak
 set cindent
 set clipboard=unnamed
-set cmdheight=1
-set completeopt=menu,menuone
 set copyindent
 set foldlevelstart=99
 set foldmethod=syntax
@@ -25,7 +23,6 @@ set ignorecase
 set laststatus=2
 set linebreak
 set listchars=tab:>-,eol:$
-set mousehide
 set mousemodel=popup
 set number
 set relativenumber
@@ -38,7 +35,6 @@ set showbreak=-->
 set showcmd
 set showfulltag
 set showmatch
-set showmode
 set sidescroll=8
 set sidescrolloff=4
 set smartcase
