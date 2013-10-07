@@ -101,6 +101,11 @@ let delimitMate_expand_cr = 1
 
 Bundle 'gerw/vim-HiLinkTrace'
 
+Bundle 'sjl/gundo.vim'
+nnoremap <F10> :GundoToggle<CR>
+let g:gundo_width = 40
+let g:gundo_preview_bottom = 1
+
 Bundle 'embear/vim-localvimrc'
 let g:localvimrc_ask = 0
 
