@@ -152,9 +152,6 @@ nnoremap q <Nop>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>v :source $MYVIMRC<CR>
 
-" Easily remove search highlighting with Esc
-nnoremap <Esc> :nohlsearch<CR><Esc>
-
 " Save us from hitting shift all the time
 nnoremap ; :
 
