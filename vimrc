@@ -167,6 +167,12 @@ inoremap <Up> <Esc>gka
 " Make Y yank to end of line, like C and D
 nnoremap Y y$
 
+" Center screen after simple searches
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
+
 " Mark movements go to column by default
 nnoremap ' `
 
