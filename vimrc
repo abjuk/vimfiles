@@ -224,11 +224,14 @@ augroup Binary
     au BufWritePost *.tif set nomod | endif
 augroup END
 
-" Hero Designer Files are XML
-au BufNewFile,BufRead *.hdt,*.hdp,*.hdc set filetype=xml
+augroup Filetypes
+    au!
+    " Hero Designer Files are XML
+    au BufNewFile,BufRead *.hdt,*.hdp,*.hdc set filetype=xml
 
-" Tags files
-au BufNewFile,BufRead .tags set filetype=tags
+    " Tags files
+    au BufNewFile,BufRead .tags set filetype=tags
+augroup END
 
 """"""""""""""""""""""""""""""""""""""""""
 "  Autocommands
