@@ -155,9 +155,9 @@ nnoremap ; :
 
 " Arrow keys up and down by display lines instead of file lines
 nnoremap <Down> gj
-inoremap <Down> <Esc>gja
+inoremap <Down> <C-O>gj
 nnoremap <Up> gk
-inoremap <Up> <Esc>gka
+inoremap <Up> <C-O>gk
 
 " Make Y yank to end of line, like C and D
 nnoremap Y y$
