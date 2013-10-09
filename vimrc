@@ -101,6 +101,11 @@ let delimitMate_expand_cr = 1
 
 Bundle 'gerw/vim-HiLinkTrace'
 
+Bundle 'sjl/gundo.vim'
+nnoremap <F10> :GundoToggle<CR>
+let g:gundo_width = 40
+let g:gundo_preview_bottom = 1
+
 Bundle 'embear/vim-localvimrc'
 let g:localvimrc_ask = 0
 
@@ -147,9 +152,6 @@ nnoremap q <Nop>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>v :source $MYVIMRC<CR>
 
-" Easily remove search highlighting with Esc
-nnoremap <Esc> :nohlsearch<CR><Esc>
-
 " Save us from hitting shift all the time
 nnoremap ; :
 
@@ -161,6 +163,12 @@ inoremap <Up> <C-O>gk
 
 " Make Y yank to end of line, like C and D
 nnoremap Y y$
+
+" Center screen after simple searches
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
 
 " Mark movements go to column by default
 nnoremap ' `
@@ -216,11 +224,14 @@ augroup Binary
     au BufWritePost *.tif set nomod | endif
 augroup END
 
-" Hero Designer Files are XML
-au BufNewFile,BufRead *.hdt,*.hdp,*.hdc set filetype=xml
+augroup Filetypes
+    au!
+    " Hero Designer Files are XML
+    au BufNewFile,BufRead *.hdt,*.hdp,*.hdc set filetype=xml
 
-" Tags files
-au BufNewFile,BufRead .tags set filetype=tags
+    " Tags files
+    au BufNewFile,BufRead .tags set filetype=tags
+augroup END
 
 """"""""""""""""""""""""""""""""""""""""""
 "  Autocommands
