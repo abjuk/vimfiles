@@ -177,6 +177,9 @@ nnoremap ' `
 " TODO:  Find something more useful to do with spacebar
 nnoremap <Space> za
 
+" Underscores are a pain to hit, so use Shift-Space
+inoremap <S-Space> _
+
 " Puts spaces around all operators on a line.
 " Gets confused by paren-bangs.
 nnoremap <F5> :s/\(\w\+]*)*\)\([*/%+\-<>!&\^<Bar>=][&<Bar><]\==\=\)\((*!*"*\-\=\w\+\)/\1<Space>\2<Space>\3/g<CR>
