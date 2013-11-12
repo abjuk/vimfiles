@@ -183,14 +183,14 @@ inoremap <S-Space> _
 
 " Puts spaces around all operators on a line.
 " Gets confused by paren-bangs.
-nnoremap <F5> :s/\(\w\+]*)*\)\([*/%+\-<>!&\^<Bar>=][&<Bar><]\==\=\)\((*!*"*\-\=\w\+\)/\1<Space>\2<Space>\3/g<CR>
+nnoremap <F5> :s/\(\w\+]*)*\)\([*/%+\-<>!&\^<Bar>=][&<Bar><]\==\=\)\((*!*"*\-\=\w\+\)/\1<Space>\2<Space>\3/<CR>
 " Ditto for all lines in the file.
-nnoremap <S-F5> :g!/"/s/\(\w\+]*)*\)\([*/%+\-<>!&\^<Bar>=][&<Bar><]\==\=\)\((*!*"*\-\=\w\+\)/\1<Space>\2<Space>\3/g<CR>
+nnoremap <S-F5> :g!/"/s/\(\w\+]*)*\)\([*/%+\-<>!&\^<Bar>=][&<Bar><]\==\=\)\((*!*"*\-\=\w\+\)/\1<Space>\2<Space>\3/<CR>
 
 " Put spaces after semicolons where necessary
-nnoremap <F6> :s/;\(\k\)/;<Space>\1/g<CR>
+nnoremap <F6> :s/;\(\k\)/;<Space>\1/<CR>
 " Ditto for entire file
-nnoremap <S-F6> :%s/;\(\k\)/;<Space>\1/g<CR>
+nnoremap <S-F6> :%s/;\(\k\)/;<Space>\1/<CR>
 
 " SVN diff on current file
 nnoremap <F8> :set columns=188<CR>:VCSVimDiff<CR>
