@@ -113,6 +113,8 @@ Bundle 'scrooloose/nerdcommenter'
 
 Bundle 'scrooloose/nerdtree'
 
+"Bundle 'scrooloose/syntastic'
+
 Bundle 'majutsushi/tagbar'
 nnoremap <F9> :TagbarToggle<CR>
 let g:tagbar_expand = 1
