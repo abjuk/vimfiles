@@ -83,9 +83,11 @@ else
 	call vundle#rc()
 endif
 
+" Vundle, the plugin manager.
 Bundle 'gmarik/vundle'
 nnoremap <Leader>bi :BundleInstall<CR>
 
+" Swap between header/src with :A
 Bundle 'a.vim'
 let g:alternateExtensions_h = "inl,c,m,mm,cpp,cxx,cc,CC"
 let g:alternateExtensions_m = "c,cpp,h"
@@ -93,38 +95,50 @@ let g:alternateExtensions_mm = "c,cpp,h"
 let g:alternateNoDefaultAlternate = 1
 nnoremap <Leader>a :A<CR>
 
+" Make f, F, t and T smarter.  Frees up ; for other mappings.
 Bundle ('rhysd/clever-f.vim')
 let g:clever_f_fix_key_direction = 1
 
+" Auto-close parens, brackets, quotes etc.
 "Bundle ('Raimondi/delimitMate')
 "let delimitMate_expand_cr = 1
 
+" Display syntax highlighting info for character under the cursor.
 Bundle 'gerw/vim-HiLinkTrace'
 
+" Interact with Vim's undo tree
 Bundle 'sjl/gundo.vim'
 nnoremap <F10> :GundoToggle<CR>
 let g:gundo_width = 40
 let g:gundo_preview_bottom = 1
 
+" Look for a .lvimrc file in current directory tree. 
+" Handy for project specific settings
 Bundle 'embear/vim-localvimrc'
 let g:localvimrc_ask = 0
 
+" Quickly (un)comment lines of code
 Bundle 'scrooloose/nerdcommenter'
 
+" Filesystem explorer
 Bundle 'scrooloose/nerdtree'
 
+" Syntax checking using libclang
 "Bundle 'scrooloose/syntastic'
 
+" Opens a panel with all the tags in the current file.
 Bundle 'majutsushi/tagbar'
 nnoremap <F9> :TagbarToggle<CR>
 let g:tagbar_expand = 1
 
+" Code snippets
 Bundle 'SirVer/ultisnips'
 let g:snips_author = 'Kris Pivin'
 let g:UltiSnipsExpandTrigger="<C-J>"
 let g:UltiSnipsJumpForwardTrigger="<C-J>"
 let g:UltiSnipsJumpBackwardTrigger="<C-K>"
 
+" Code completion using libclang
 Bundle 'Valloric/YouCompleteMe'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
@@ -132,7 +146,7 @@ let g:ycm_filetype_blacklist = { 'text' : 1, 'markdown' : 1, 'gitcommit' : 1 }
 let g:ycm_autoclose_preview_window_after_completion = 1
 "let g:ycm_filetype_specific_completion_to_disable = {'objcpp': 1}
 
-" CtrlP
+" Quick open
 Bundle 'kien/ctrlp.vim'
 let g:ctrlp_use_caching = 1
 let g:ctrlp_working_path_mode = 'ra'
