@@ -130,6 +130,7 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_filetype_blacklist = { 'text' : 1, 'markdown' : 1, 'gitcommit' : 1 }
 let g:ycm_autoclose_preview_window_after_completion = 1
+"let g:ycm_filetype_specific_completion_to_disable = {'objcpp': 1}
 
 " CtrlP
 Bundle 'kien/ctrlp.vim'
