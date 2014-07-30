@@ -214,7 +214,7 @@ nnoremap <F8> :set columns=188<CR>:VCSVimDiff<CR>
 nnoremap <S-F8> :set columns=110<CR>
 
 " Run ctags
-nnoremap <F4> :!~/bin/dirtags .<CR>
+nnoremap <F4> :!~/bin/newtags .<CR>
 
 " Save files in unix format
 "nnoremap <F4> :w ++ff=unix<CR>
