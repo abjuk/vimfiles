@@ -40,7 +40,7 @@ set sidescrolloff=4
 set smartcase
 set softtabstop=4
 set statusline=%<%f%y%h%m%r%=%(%l\ /\ %L%)\ 
-set tabstop=8
+set tabstop=4
 set tags=./.tags;,.tags
 "set textwidth=78
 set undofile
@@ -262,9 +262,10 @@ augroup Coding
 	" Autosave any time we lose focus or leave the buffer
 	au FocusLost,BufLeave * update
 	" C Coding, 1P standards
-	au FileType cpp,c,objc,objcpp,actionscript setlocal ts=3 sts=3 sw=3 expandtab
-	au FileType cpp,c,objc,objcpp,actionscript let c_no_curly_error = 1
+	au FileType cpp,c,objc,objcpp,actionscript,cs setlocal ts=4 sts=4 sw=4 expandtab
+	au FileType cpp,c,objc,objcpp,actionscript,cs let c_no_curly_error = 1
 	au FileType java setlocal ts=4 sts=4 sw=4 expandtab
+	au FileType xml,sh setlocal ts=4 sts=4 sw=4 expandtab
 	" Perl Coding
 	au FileType perl setlocal ts=4 cindent
 	au FileType perl highlight Identifier  term=underline ctermfg=3 guifg=yellow 
