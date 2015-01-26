@@ -188,6 +188,9 @@ nnoremap N Nzz
 nnoremap * *zz
 nnoremap # #zz
 
+" Toggle [i]nvisible characters (from sjl)
+nnoremap <leader>i :set list!<cr>
+
 " Mark movements go to column by default
 nnoremap ' `
 
