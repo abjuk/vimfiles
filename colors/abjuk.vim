@@ -32,7 +32,7 @@ highlight ModeMsg	guifg=yellow2	guibg=red	cterm=bold	ctermfg=3	ctermbg=1
 highlight MoreMsg	guifg=Green	cterm=bold	ctermfg=2	gui=bold
 highlight NonText	guifg=DarkSlateGray		ctermfg=2
 highlight Question	guifg=Green	cterm=bold	ctermfg=2	gui=bold
-highlight Search	guifg=Red	guibg=black	ctermbg=2
+highlight Search	guifg=White	guibg=black	ctermbg=2
 highlight SpecialKey	guifg=DarkSlateGray		ctermfg=DarkBlue
 highlight StatusLine	guifg=wheat	guibg=#2f4f4f	gui=NONE
 highlight StatusLine	cterm=bold	ctermfg=3	ctermbg=4
