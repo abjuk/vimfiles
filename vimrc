@@ -138,14 +138,6 @@ let g:UltiSnipsExpandTrigger="<C-J>"
 let g:UltiSnipsJumpForwardTrigger="<C-J>"
 let g:UltiSnipsJumpBackwardTrigger="<C-K>"
 
-" Code completion using libclang
-Bundle 'Valloric/YouCompleteMe'
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-let g:ycm_filetype_blacklist = { 'text' : 1, 'markdown' : 1, 'gitcommit' : 1 }
-let g:ycm_autoclose_preview_window_after_completion = 1
-"let g:ycm_filetype_specific_completion_to_disable = {'objcpp': 1}
-
 " Quick open
 Bundle 'kien/ctrlp.vim'
 let g:ctrlp_use_caching = 1
@@ -157,6 +149,16 @@ set wildignore+=*/assets/*,*/undo/*,*/Content*/*
 "let g:ctrlp_custom_ignore = { 'dir': '\vassets$', 'file': '\v\.(exe|so|dll|bin)$', }
 "let g:ctrlp_custom_ignore = '\v\.(swp|bak)$'
 "let g:ctrlp_custom_ignore = '\v\~$|\.(o|obj|swp|bak|wav|mp3|ogg|ani|pch|apk*)$|(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])'
+
+" Code completion using libclang
+if has('mac')
+	Bundle 'Valloric/YouCompleteMe'
+	let g:ycm_confirm_extra_conf = 0
+	let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+	let g:ycm_filetype_blacklist = { 'text' : 1, 'markdown' : 1, 'gitcommit' : 1 }
+	let g:ycm_autoclose_preview_window_after_completion = 1
+	"let g:ycm_filetype_specific_completion_to_disable = {'objcpp': 1}
+endif
 
 """"""""""""""""""""""""""""""""""""""""""
 "  Key Mappings
