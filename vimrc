@@ -150,14 +150,18 @@ set wildignore+=*/assets/*,*/undo/*,*/Content*/*
 "let g:ctrlp_custom_ignore = '\v\.(swp|bak)$'
 "let g:ctrlp_custom_ignore = '\v\~$|\.(o|obj|swp|bak|wav|mp3|ogg|ani|pch|apk*)$|(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])'
 
-" Code completion using libclang
 if has('mac')
+	" Code completion using libclang
 	Bundle 'Valloric/YouCompleteMe'
 	let g:ycm_confirm_extra_conf = 0
 	let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 	let g:ycm_filetype_blacklist = { 'text' : 1, 'markdown' : 1, 'gitcommit' : 1 }
 	let g:ycm_autoclose_preview_window_after_completion = 1
 	"let g:ycm_filetype_specific_completion_to_disable = {'objcpp': 1}
+else
+	" Tab completion where I don't have YCM installed
+	" TODO: investigate neocomplete.vim?
+	Bundle 'ajh17/VimCompletesMe'
 endif
 
 """"""""""""""""""""""""""""""""""""""""""
