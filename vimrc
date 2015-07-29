@@ -103,6 +103,12 @@ let g:clever_f_fix_key_direction = 1
 "Plugin ('Raimondi/delimitMate')
 "let delimitMate_expand_cr = 1
 
+Plugin 'tpope/vim-commentary'
+augroup Commentary
+	au!
+	au FileType cpp,c,objc,objcpp let b:commentary_format = "// %s"
+augroup END
+
 " Display syntax highlighting info for character under the cursor.
 Plugin 'gerw/vim-HiLinkTrace'
 
@@ -116,9 +122,6 @@ let g:gundo_preview_bottom = 1
 " Handy for project specific settings
 Plugin 'embear/vim-localvimrc'
 let g:localvimrc_ask = 0
-
-" Quickly (un)comment lines of code
-Plugin 'scrooloose/nerdcommenter'
 
 " Filesystem explorer
 Plugin 'scrooloose/nerdtree'
