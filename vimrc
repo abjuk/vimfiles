@@ -86,6 +86,8 @@ endif
 " Vundle, the plugin manager.
 Plugin 'gmarik/Vundle.vim'
 nnoremap <Leader>bi :PluginInstall<CR>
+nnoremap <Leader>bc :PluginClean<CR>
+nnoremap <Leader>bu :PluginUpdate<CR>
 
 " Swap between header/src with :A
 Plugin 'a.vim'
