@@ -105,6 +105,7 @@ let g:clever_f_fix_key_direction = 1
 "Plugin ('Raimondi/delimitMate')
 "let delimitMate_expand_cr = 1
 
+" Comment code using text objects
 Plugin 'tpope/vim-commentary'
 augroup Commentary
 	au!
@@ -127,6 +128,12 @@ let g:localvimrc_ask = 0
 
 " Filesystem explorer
 Plugin 'scrooloose/nerdtree'
+
+" Make . work correctly for (some) plugins
+Plugin 'tpope/vim-repeat'
+
+" Surround operations
+Plugin 'tpope/vim-surround'
 
 " Syntax checking using libclang
 "Plugin 'scrooloose/syntastic'
