@@ -285,8 +285,9 @@ augroup Coding
 	" Autosave any time we lose focus or leave the buffer
 	au FocusLost,BufLeave * update
 	" C Coding, 1P standards
-	au FileType cpp,c,objc,objcpp,actionscript,cs setlocal ts=4 sts=4 sw=4 expandtab
-	au FileType cpp,c,objc,objcpp,actionscript,cs let c_no_curly_error = 1
+	au FileType cpp,c,objc,objcpp,cs setlocal ts=3 sts=3 sw=3 expandtab
+	au FileType cpp,c,objc,objcpp,cs let c_no_curly_error = 1
+	au FileType actionscript setlocal ts=4 sts=4 sw=4 expandtab
 	au FileType java setlocal ts=4 sts=4 sw=4 expandtab
 	au FileType xml,sh setlocal ts=4 sts=4 sw=4 expandtab
 	" Perl Coding
