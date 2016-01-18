@@ -164,6 +164,10 @@ else
 	Bundle 'ajh17/VimCompletesMe'
 endif
 
+" Haxe
+Bundle 'jdonaldson/vaxe'
+let g:vaxe_lime_target=7
+
 """"""""""""""""""""""""""""""""""""""""""
 "  Key Mappings
 """"""""""""""""""""""""""""""""""""""""""
