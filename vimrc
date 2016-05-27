@@ -173,7 +173,12 @@ if has('mac')
 else
 	" Tab completion where I don't have YCM installed
 	" TODO: investigate neocomplete.vim?
-	Plugin 'ajh17/VimCompletesMe'
+	" Plugin 'ajh17/VimCompletesMe'
+	Plugin 'Shougo/neocomplete.vim'
+	let g:neocomplete#enable_at_startup = 1
+	" let g:neocomplete#enable_auto_select = 1
+	inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+	inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 endif
 
 " Haxe
