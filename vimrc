@@ -76,8 +76,8 @@ filetype off
 "  Plugins
 """""""""""""""""""""""""""""""""""""""""
 if has('win32')
-	set runtimepath+=$HOME/vimfiles/bundle/vundle/
-	call vundle#rc("$HOME/vimfiles/bundle")
+	set runtimepath+=$HOME/vimfiles/bundle/Vundle.vim
+	call vundle#begin()
 else
 	set runtimepath+=~/.vim/bundle/Vundle.vim
 	call vundle#begin()
