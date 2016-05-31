@@ -109,7 +109,7 @@ let g:clever_f_fix_key_direction = 1
 Plugin 'tpope/vim-commentary'
 augroup Commentary
 	au!
-	au FileType cpp,c,objc,objcpp let b:commentary_format = "// %s"
+	au FileType cpp,c,objc,objcpp,cs let b:commentary_format = "//%s"
 augroup END
 
 " Display syntax highlighting info for character under the cursor.
