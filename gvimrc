@@ -6,6 +6,7 @@ if has('mac')
 endif
 
 set lines=54
+set titlelen=144
 
 " This mapping was giving me trouble in git commits, which is basically
 " the only thing I do in a terminal window.

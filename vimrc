@@ -76,8 +76,8 @@ filetype off
 "  Plugins
 """""""""""""""""""""""""""""""""""""""""
 if has('win32')
-	set runtimepath+=$HOME/vimfiles/bundle/vundle/
-	call vundle#rc("$HOME/vimfiles/bundle")
+	set runtimepath+=$HOME/vimfiles/bundle/Vundle.vim
+	call vundle#begin()
 else
 	set runtimepath+=~/.vim/bundle/Vundle.vim
 	call vundle#begin()
@@ -109,7 +109,8 @@ let g:clever_f_fix_key_direction = 1
 Plugin 'tpope/vim-commentary'
 augroup Commentary
 	au!
-	au FileType cpp,c,objc,objcpp,cs let b:commentary_format = "//%s"
+	au FileType cpp,c,objc,objcpp,actionscript let b:commentary_format = "//%s"
+	au FileType dosbatch let b:commentary_format = "::%s"
 augroup END
 
 " Display syntax highlighting info for character under the cursor.
@@ -178,8 +179,17 @@ if has('mac')
 else
 	" Tab completion where I don't have YCM installed
 	" TODO: investigate neocomplete.vim?
-	Plugin 'ajh17/VimCompletesMe'
+	" Plugin 'ajh17/VimCompletesMe'
+	Plugin 'Shougo/neocomplete.vim'
+	let g:neocomplete#enable_at_startup = 1
+	" let g:neocomplete#enable_auto_select = 1
+	inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+	inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 endif
+
+" Haxe
+Plugin 'jdonaldson/vaxe'
+let g:vaxe_lime_target=7
 
 call vundle#end()
 
