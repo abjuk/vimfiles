@@ -124,7 +124,7 @@ let g:gundo_preview_bottom = 1
 " Auto-generate/updsate .tags file for a project
 Plugin 'ludovicchabant/vim-gutentags'
 let g:gutentags_tagfile = ".tags"
-set statusline+=%{gutentags#statusline('[Generating...]')}
+set statusline+=%{gutentags#statusline('[Generating\ Tags...]')}
 
 " Look for a .lvimrc file in current directory tree. 
 " Handy for project specific settings
