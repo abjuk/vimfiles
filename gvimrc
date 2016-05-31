@@ -1,6 +1,10 @@
 """""""""""""""""""""""""""""""""""""""""
 "  Global Settings
 """""""""""""""""""""""""""""""""""""""""
+if has('mac')
+	set columns=110
+endif
+
 set lines=54
 
 " This mapping was giving me trouble in git commits, which is basically
