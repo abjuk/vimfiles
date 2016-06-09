@@ -19,4 +19,7 @@ if !exists("did_kp_syntax_inits")
     hi link jsUpCamCase		Type
     hi link jsMethod		Function
     hi link jsType		Type
+
+	hi link javaScriptIdentifier	Keyword
+	hi link javaScriptFunction		Keyword
 endif
