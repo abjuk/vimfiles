@@ -1,6 +1,10 @@
 """""""""""""""""""""""""""""""""""""""""
 "  Global Settings
 """""""""""""""""""""""""""""""""""""""""
+if has('mac')
+	set columns=110
+endif
+
 set lines=54
 set titlelen=144
 

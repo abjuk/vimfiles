@@ -109,7 +109,7 @@ let g:clever_f_fix_key_direction = 1
 Plugin 'tpope/vim-commentary'
 augroup Commentary
 	au!
-	au FileType cpp,c,objc,objcpp,actionscript let b:commentary_format = "// %s"
+	au FileType cpp,c,objc,objcpp,actionscript let b:commentary_format = "//%s"
 	au FileType dosbatch let b:commentary_format = "::%s"
 augroup END
 
@@ -121,6 +121,11 @@ Plugin 'sjl/gundo.vim'
 nnoremap <F10> :GundoToggle<CR>
 let g:gundo_width = 40
 let g:gundo_preview_bottom = 1
+
+" Auto-generate/updsate .tags file for a project
+Plugin 'ludovicchabant/vim-gutentags'
+let g:gutentags_tagfile = ".tags"
+set statusline+=%{gutentags#statusline('[Generating\ Tags...]')}
 
 " Look for a .lvimrc file in current directory tree. 
 " Handy for project specific settings
@@ -295,9 +300,11 @@ augroup Coding
 	" Autosave any time we lose focus or leave the buffer
 	au FocusLost,BufLeave * update
 	" C Coding, 1P standards
-	au FileType cpp,c,objc,objcpp,actionscript,cs setlocal ts=4 sts=4 sw=4 expandtab
-	au FileType cpp,c,objc,objcpp,actionscript,cs let c_no_curly_error = 1
-	au FileType java setlocal ts=4 sts=4 sw=4 expandtab
+	au FileType cpp,c,objc,objcpp setlocal ts=3 sts=3 sw=3 expandtab
+	au FileType cs setlocal ts=4 sts=4 sw=4 expandtab
+	au FileType cpp,c,objc,objcpp,cs let c_no_curly_error = 1
+	au FileType actionscript setlocal ts=4 sts=4 sw=4 expandtab
+	au FileType java setlocal ts=3 sts=3 sw=3 expandtab
 	au FileType xml,sh setlocal ts=4 sts=4 sw=4 expandtab
 	" Perl Coding
 	au FileType perl setlocal ts=4 cindent
