@@ -112,6 +112,7 @@ augroup Commentary
 	au!
 	au FileType cpp,c,objc,objcpp,actionscript let b:commentary_format = "//%s"
 	au FileType dosbatch let b:commentary_format = "::%s"
+	au FileType gitcommit let b:commentary_format = "#%s"
 augroup END
 
 " Display syntax highlighting info for character under the cursor.
