@@ -12,6 +12,7 @@ set backupext=.bak
 set cindent
 set clipboard=unnamed
 set copyindent
+set nofixeol
 set foldlevelstart=99
 set foldmethod=syntax
 set formatoptions+=1j
