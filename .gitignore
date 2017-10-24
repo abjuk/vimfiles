@@ -15,4 +15,5 @@ backup/
 temp/
 undo/
 
+.tags*
 .ycm_extra_conf.pyc
