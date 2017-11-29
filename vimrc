@@ -193,6 +193,9 @@ endif
 Plugin 'jdonaldson/vaxe'
 let g:vaxe_lime_target=7
 
+" Pbxproj syntax
+Plugin 'cfdrake/vim-pbxproj'
+
 call vundle#end()
 
 """"""""""""""""""""""""""""""""""""""""""
