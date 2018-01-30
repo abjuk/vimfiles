@@ -143,6 +143,9 @@ Plugin 'tpope/vim-repeat'
 " Surround operations
 Plugin 'tpope/vim-surround'
 
+" Pretty-print json files
+Plugin 'tpope/vim-jdaddy'
+
 " Syntax checking using libclang
 "Plugin 'scrooloose/syntastic'
 
