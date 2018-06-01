@@ -66,7 +66,7 @@ else
 endif
 
 if has('win32')
-	set guifont=Lucida_Console:h12
+	set guifont=Menlo:h11:b,Hack:h11:b,Lucida_Console:h12
 	set linespace=0
 elseif has('mac')
 	set guifont=Menlo:h14
