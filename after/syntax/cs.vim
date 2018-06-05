@@ -2,6 +2,7 @@
 " Variables...
 syn match csLowCamCase "\<\l\+\w\+\>" display
 syn match csClass	"\<\u\w\+\>"
+syn match csSingleChar "\<[ijklmnpsxyz]\>"
 
 " Functions ...
 syn match csMethod  "\~\=\a[a-zA-Z0-9_<>]\+\s*("me=e-1 display
@@ -16,6 +17,7 @@ if !exists("did_kp_syntax_inits")
 
    hi link csConst		Constant
    hi link csLowCamCase	Identifier
+   hi link csSingleChar	Identifier
    hi link csMethod		Function
    hi link csType		Type
    hi link csClass		Type

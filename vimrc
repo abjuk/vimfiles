@@ -40,7 +40,7 @@ set sidescroll=8
 set sidescrolloff=4
 set smartcase
 set softtabstop=4
-set statusline=%<%f%y%h%m%r%=%(%l\ /\ %L%)\ 
+set statusline=%<%f%y%h%m%r%=%(%l,%c\ /\ %L%)\ 
 set tabstop=4
 set tags=./.tags;,.tags
 "set textwidth=78
@@ -66,7 +66,8 @@ else
 endif
 
 if has('win32')
-	set guifont=Lucida_Console:h12
+	set guifont=Menlo:h11:b,Hack:h11:b,Lucida_Console:h12
+	set linespace=0
 elseif has('mac')
 	set guifont=Menlo:h14
 end
@@ -142,6 +143,9 @@ Plugin 'tpope/vim-repeat'
 
 " Surround operations
 Plugin 'tpope/vim-surround'
+
+" Pretty-print json files
+Plugin 'tpope/vim-jdaddy'
 
 " Syntax checking using libclang
 "Plugin 'scrooloose/syntastic'
