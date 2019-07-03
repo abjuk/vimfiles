@@ -252,7 +252,7 @@ nnoremap <F5> :s/\(\w\+]*)*\)\([*/%+\-<>!&\^<Bar>=][&<Bar><]\==\=\)\((*!*"*\-\=\
 nnoremap <S-F5> :g!/"/s/\(\w\+]*)*\)\([*/%+\-<>!&\^<Bar>=][&<Bar><]\==\=\)\((*!*"*\-\=\w\+\)/\1<Space>\2<Space>\3/<CR>
 
 " Put spaces after semicolons where necessary
-nnoremap <F6> :s/;\(\k\)/;<Space>\1/<CR>
+nnoremap <F6> :s/\([,;]\)\(\k\)/\1<Space>\2/<CR>
 " Ditto for entire file
 nnoremap <S-F6> :%s/;\(\k\)/;<Space>\1/<CR>
 
